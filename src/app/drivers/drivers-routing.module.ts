@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PageDriverComponent } from './presentation/pages/page-driver/page-driver.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "", component: PageDriverComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -3,28 +3,38 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
 import { CoreModule } from './core/core.module';
-import { MedicsModule } from './medics/medics.module';
 import { RouterModule, Routes } from '@angular/router';
 import { PageLoginComponent } from './core/presentation/pages/page-login/page-login.component';
-import { PageMedicComponent } from './medics/presentation/pages/page-medic/page-medic.component';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { HistoriesModule } from './histories/histories.module';
-import { DriversModule } from './drivers/drivers.module';
-import { UsersModule } from './users/users.module';
-import { PageDashboardComponent } from './dashboard/presentation/pages/page-dashboard/page-dashboard.component';
-import { PageHistoryComponent } from './histories/presentation/pages/page-history/page-history.component';
-import { PageDriverComponent } from './drivers/presentation/pages/page-driver/page-driver.component';
-import { PageUserComponent } from './users/presentation/pages/page-user/page-user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 //interfase para las rutas
 const routes: Routes = [
   { path: '', component: PageLoginComponent },
-  { path: 'medics', component: PageMedicComponent },
-  { path: 'dashboard', component: PageDashboardComponent },
-  { path: 'histories', component: PageHistoryComponent },
-  { path: 'drivers', component: PageDriverComponent },
-  { path: 'users', component: PageUserComponent },
-  { path: '**', redirectTo: '' },
+  {
+    path: 'medics', loadChildren: () =>
+      import("./medics/medics.module").then(m => m.MedicsModule)
+  },
+  {
+    path: 'histories', loadChildren: () =>
+      import("./histories/histories.module").then(m => m.HistoriesModule)
+  },
+  {
+    path: 'users', loadChildren: () =>
+      import("./users/users.module").then(m => m.UsersModule)
+  },
+  {
+    path: 'drivers', loadChildren: () =>
+      import("./drivers/drivers.module").then(m => m.DriversModule)
+  },
+  {
+    path: 'dashboard', loadChildren: () =>
+      import("./dashboard/dashboard.module").then(m => m.DashboardModule)
+  },
+  {
+    path: '**', redirectTo: ''
+  },
   // { path: '**', component: PageLoginComponent },
 ];
 //importacion de modulos 
@@ -33,12 +43,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     CoreModule,
-    MedicsModule,
-    DashboardModule,
-    HistoriesModule,
-    DriversModule,
-    UsersModule,
-    RouterModule.forRoot(routes),//metodo statico forRoot para las rutas
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,//metodo statico forRoot para las rutas
   ],
   providers: [],
   bootstrap: [AppComponent],

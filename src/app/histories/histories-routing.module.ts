@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PageHistoryComponent } from './presentation/pages/page-history/page-history.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "", component: PageHistoryComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
