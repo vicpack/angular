@@ -3,7 +3,7 @@ mat-nav-list{
 }
 
 mat-list-item{
-    transition: 0.2 all;
+    transition: 0.8 all;
     border-radius: 0 24px 24px 0;
 }
 
