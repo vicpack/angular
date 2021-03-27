@@ -3,10 +3,22 @@ mat-nav-list{
 }
 
 mat-list-item{
-    transition: 0.8 all;
+    transition: 0.2 all;
     border-radius: 0 24px 24px 0;
 }
 
 mat-list-item:hover{
     background-color: white;
+}
+
+.activeLink{
+    background-color: #682B40;
+}
+a,
+a:link,
+a:visited,
+a:active{
+    color:white;
+    font-size: 14px;
+    font-family: muliregular;
 }

@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing-module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MenuService } from './shared/services/menu.service';
+import { LogService } from './shared/services/log.service';
+import { IconService } from './shared/services/icon.service';
+import { HttpClientModule } from '@angular/common/http';
 
 //interfase para las rutas
 /**/
@@ -14,9 +18,14 @@ import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [AppComponent, ItemComponent],
   imports: [
-    BrowserModule, CoreModule, AppRoutingModule, BrowserAnimationsModule, MatSidenavModule, MatListModule
+    BrowserModule, CoreModule, AppRoutingModule, BrowserAnimationsModule, MatSidenavModule, MatListModule, HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LogService
+    //{ provide: MenuService, useClass: MenuService }
+  ],//los servicios se registran en los providers
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private IconService: IconService) { }//inyeccion de iconos service para crear la instancia
+}
