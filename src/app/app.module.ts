@@ -5,8 +5,8 @@ import { ItemComponent } from './item/item.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing-module';
-
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 //interfase para las rutas
 /**/
@@ -14,7 +14,7 @@ import { AppRoutingModule } from './app-routing-module';
 @NgModule({
   declarations: [AppComponent, ItemComponent],
   imports: [
-    BrowserModule, CoreModule, AppRoutingModule
+    BrowserModule, CoreModule, AppRoutingModule, BrowserAnimationsModule, MatSidenavModule, MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent],

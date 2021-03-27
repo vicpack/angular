@@ -1,0 +1,12 @@
+mat-nav-list{
+    width: 95%;
+}
+
+mat-list-item{
+    transition: 0.2 all;
+    border-radius: 0 24px 24px 0;
+}
+
+mat-list-item:hover{
+    background-color: white;
+}
