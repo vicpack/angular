@@ -1,0 +1,15 @@
+mat-toolbar{
+    background-color: #E91E63 !important;
+    border-bottom: 1px solid black;
+}
+
+.profile{
+    height: 64px;
+}
+
+img{
+    width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}

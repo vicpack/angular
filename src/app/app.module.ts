@@ -11,14 +11,15 @@ import { MenuService } from './shared/services/menu.service';
 import { LogService } from './shared/services/log.service';
 import { IconService } from './shared/services/icon.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
 //interfase para las rutas
 /**/
 //importacion de modulos 
 @NgModule({
   declarations: [AppComponent, ItemComponent],
   imports: [
-    BrowserModule, CoreModule, AppRoutingModule, BrowserAnimationsModule, MatSidenavModule, MatListModule, HttpClientModule
+    BrowserModule, CoreModule, AppRoutingModule, BrowserAnimationsModule, MatSidenavModule, MatListModule, HttpClientModule, MatIconModule, FlexLayoutModule
   ],
   providers: [
     LogService
