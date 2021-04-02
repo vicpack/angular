@@ -1,10 +1,9 @@
 mat-toolbar {
     background-color: #E91E63 !important;
     height: 80px;
-    width: 99%;
     border: 1px solid transparent;
     box-shadow: 2px;
-    margin: 10px 5px 0 5px;
+    /*margin: 10px 5px 0 5px;*/
   }
   
   h2 {

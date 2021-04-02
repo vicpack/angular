@@ -1,0 +1,5 @@
+.container-table{
+    height: 90%;
+    overflow: auto;
+    position: relative;
+}

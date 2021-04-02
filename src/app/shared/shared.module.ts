@@ -7,12 +7,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContainerComponent } from './components/container/container.component';
 import { MatCardModule } from '@angular/material/card';
 import { TableComponent } from './components/table/table.component';
-
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [TitleComponent, ContainerComponent, TableComponent],
   imports: [
     CommonModule, MatToolbarModule, MatIconModule, FlexLayoutModule,
-    MatCardModule,
+    MatCardModule, MatTableModule,
   ],
   exports: [TitleComponent, ContainerComponent, TableComponent]
 })
