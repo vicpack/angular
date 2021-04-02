@@ -6,13 +6,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContainerComponent } from './components/container/container.component';
 import { MatCardModule } from '@angular/material/card';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
-  declarations: [TitleComponent, ContainerComponent],
+  declarations: [TitleComponent, ContainerComponent, TableComponent],
   imports: [
     CommonModule, MatToolbarModule, MatIconModule, FlexLayoutModule,
     MatCardModule,
   ],
-  exports: [TitleComponent, ContainerComponent]
+  exports: [TitleComponent, ContainerComponent, TableComponent]
 })
 export class SharedModule { }
