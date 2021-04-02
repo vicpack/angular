@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContainerComponent } from './components/container/container.component';
 import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   declarations: [TitleComponent, ContainerComponent],
   imports: [

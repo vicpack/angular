@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing-module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MenuService } from './shared/services/menu.service';
+
 import { LogService } from './shared/services/log.service';
 import { IconService } from './shared/services/icon.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [AppComponent, ItemComponent],
   imports: [
-    BrowserModule, CoreModule, AppRoutingModule, BrowserAnimationsModule, MatSidenavModule, MatListModule, HttpClientModule, MatIconModule, FlexLayoutModule
+    BrowserModule,
+    CoreModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatListModule,
+    HttpClientModule,
+    MatIconModule,
+    FlexLayoutModule,
   ],
   providers: [
     LogService
