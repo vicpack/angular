@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { PageDashboardComponent } from './presentation/pages/page-dashboard/page-dashboard.component';
 import { StaticGraphComponent } from './presentation/views/static-graph/static-graph.component';
 import { SharedModule } from '../shared/shared.module';
+import { TitleComponent } from '../shared/components/title/title.component';
 
 @NgModule({
   declarations: [PageDashboardComponent, StaticGraphComponent],

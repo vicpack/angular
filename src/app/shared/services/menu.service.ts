@@ -23,4 +23,12 @@ export class MenuService {
         this.LogService.writeTolog("get list menu");
         return [...this.listMenu];
     }
+
+    getDataPath(path: string): Partial<IMenu> {
+        const elementMatched = this.listMenu.find(el => path.toLowerCase().indexOf(el.url.toLowerCase()) > -1);
+        return {
+            title: elementMatched?.title,
+            icon: elementMatched?.icon,
+        };
+    }
 }
