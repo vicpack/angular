@@ -8,4 +8,5 @@ mat-card{
     background-color: #E91E63;
     padding: 20px;
     width: 95%;
+    box-shadow: 2px;
 }

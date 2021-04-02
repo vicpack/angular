@@ -5,6 +5,7 @@ mat-sidenav-container,mat-sidenav-content,mat-sidenav{
 mat-sidenav{
     width: 280px;
     background-color: #E91E63;
+    box-shadow: 0 50px 50px -10px rgba(0,0,0,.5);
 }
 
 .log{
