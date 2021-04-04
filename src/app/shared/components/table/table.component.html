@@ -9,3 +9,6 @@
         <tr mat-row *matRowDef="let row; columns: listFields" class="highline"></tr>
     </table>
 </div>
+<div>
+    <mat-paginator [pageSize]="pageSize" [length]="totalRecord" showFirstLastButtons="true"></mat-paginator>
+</div>
