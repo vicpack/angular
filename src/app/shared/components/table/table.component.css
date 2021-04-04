@@ -3,3 +3,7 @@
     overflow: auto;
     position: relative;
 }
+
+.highline:hover{
+        background-color:rgba(1, 1, 1, 0.1);
+}

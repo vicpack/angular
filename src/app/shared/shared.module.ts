@@ -8,12 +8,14 @@ import { ContainerComponent } from './components/container/container.component';
 import { MatCardModule } from '@angular/material/card';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [TitleComponent, ContainerComponent, TableComponent],
   imports: [
     CommonModule, MatToolbarModule, MatIconModule, FlexLayoutModule,
     MatCardModule, MatTableModule,
   ],
-  exports: [TitleComponent, ContainerComponent, TableComponent]
+  exports: [TitleComponent, ContainerComponent, TableComponent, MatTableModule, MatButtonModule, MatIconModule, MatTooltipModule,]
 })
 export class SharedModule { }
