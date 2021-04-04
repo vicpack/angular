@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MetaDataColumn } from '../../services/meta-data-column';
 
 @Component({
   selector: 'amb-table',
@@ -8,7 +9,9 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class TableComponent implements OnInit {
   @Input() data: any = [];
-  @Input() listFields: string[] = [];
+  @Input() metaDataColumns: MetaDataColumn[] = []
+
+  listFields: string[] = [];
 
   dataSource: any;
 
@@ -25,6 +28,7 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.listFields = this.metaDataColumns.map((el) => el.field);
     this.dataSource = new MatTableDataSource<any>(this.data);
   }
 
