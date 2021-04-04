@@ -10,5 +10,7 @@
     </table>
 </div>
 <div>
-    <mat-paginator [pageSize]="pageSize" [length]="totalRecord" showFirstLastButtons="true"></mat-paginator>
+    <mat-paginator [pageSize]="pageSize" [length]="totalRecords" showFirstLastButtons="true"
+        (page)="handlerPage($event)">
+    </mat-paginator>
 </div>

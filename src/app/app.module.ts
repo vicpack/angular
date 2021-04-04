@@ -13,6 +13,8 @@ import { IconService } from './shared/services/icon.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { Paginator } from './shared/classes/paginator';
 //interfase para las rutas
 /**/
 //importacion de modulos 
@@ -30,7 +32,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
   ],
   providers: [
-    LogService
+    LogService,
+    { provide: MatPaginatorIntl, useClass: Paginator },
     //{ provide: MenuService, useClass: MenuService }
   ],//los servicios se registran en los providers
   bootstrap: [AppComponent],

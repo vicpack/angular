@@ -14,7 +14,7 @@ import { MetaDataColumn } from '../../services/meta-data-column';
 export class TableComponent implements OnInit {
   @Input() data: any = [];
   @Input() metaDataColumns: MetaDataColumn[] = [];
-  @Input() totalRecord: number = 0;
+  @Input() totalRecords: number = 0;
   @ViewChild(MatTable, { static: true }) table: MatTable<any> | undefined;
   @ContentChildren(MatColumnDef, { descendants: true }) columnsDef: QueryList<MatColumnDef> | undefined
   listFields: string[] = [];
@@ -46,5 +46,9 @@ export class TableComponent implements OnInit {
     if (this.columnsDef.length) {
       this.listFields.push('actions');
     }
+  }
+
+  handlerPage(evt: any) {
+    console.log(evt.pageIndex);
   }
 }
