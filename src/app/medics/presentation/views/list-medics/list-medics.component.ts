@@ -22,7 +22,11 @@ export class ListMedicsComponent implements OnInit {
     { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
     { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
     { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
-
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
   ];
 
   constructor() { }
