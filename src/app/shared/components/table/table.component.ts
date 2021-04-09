@@ -34,8 +34,19 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.listFields = this.metaDataColumns.map((el) => el.field);
-    this.dataSource = new MatTableDataSource<any>(this.data);
+    //this.dataSource = new MatTableDataSource<any>(this.data);
     this.pageSize = environment.pageSize;
+    this.loadData();
+  }
+
+  ngOnChanges() {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    this.loadData();
+  }
+
+  loadData() {
+    this.dataSource = new MatTableDataSource<any>(this.data);
   }
   //metodo que se ejecuta cuando el contenido de la etiqueta ngcontent haya cargado
   ngAfterContentInit() {

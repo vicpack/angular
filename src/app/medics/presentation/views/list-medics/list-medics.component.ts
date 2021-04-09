@@ -27,11 +27,26 @@ export class ListMedicsComponent implements OnInit {
     { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
     { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
     { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
+    { cmp: "123", nombre: "Gregory", apellido: "House", especialidad: "Cirujano", localidad: "Perú" },
   ];
 
+  dataByPage: any = []
   constructor() { }
 
   ngOnInit(): void {
+    this.loadData();
   }
 
+  loadData(page: number = 0) {
+    this.dataByPage = this.data.slice(page * 10, page * 10 + 10);
+  }
+
+  changePage(evt: { length: number; pageIndex: number; pageSize: number; previousPageIndex?: number; }) {
+    this.loadData(evt.pageIndex);
+  }
 }
