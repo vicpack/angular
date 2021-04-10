@@ -18,10 +18,31 @@ export class ListDriversComponent implements OnInit {
     { nombre: 'Monica', apellido: 'Jimenez', licencia: 'Doctora' },
     { nombre: 'Victor', apellido: 'Morales', licencia: 'Piloto' },
     { nombre: 'Michelle', apellido: 'Mendez', licencia: 'Doctora' },
+    { nombre: 'Carlos', apellido: 'Trejo', licencia: 'Piloto' },
+    { nombre: 'Monica', apellido: 'Jimenez', licencia: 'Doctora' },
+    { nombre: 'Victor', apellido: 'Morales', licencia: 'Piloto' },
+    { nombre: 'Michelle', apellido: 'Mendez', licencia: 'Doctora' },
+    { nombre: 'Carlos', apellido: 'Trejo', licencia: 'Piloto' },
+    { nombre: 'Monica', apellido: 'Jimenez', licencia: 'Doctora' },
+    { nombre: 'Victor', apellido: 'Morales', licencia: 'Piloto' },
+    { nombre: 'Michelle', apellido: 'Mendez', licencia: 'Doctora' },
+    { nombre: 'Carlos', apellido: 'Trejo', licencia: 'Piloto' },
+    { nombre: 'Monica', apellido: 'Jimenez', licencia: 'Doctora' },
+    { nombre: 'Victor', apellido: 'Morales', licencia: 'Piloto' },
+    { nombre: 'Michelle', apellido: 'Mendez', licencia: 'Doctora' },
   ];
+  dataByPage: any = []
   constructor() { }
 
   ngOnInit(): void {
+    this.loadData();
   }
 
+  loadData(page: number = 0) {
+    this.dataByPage = this.data.slice(page * 10, page * 10 + 10);
+  }
+
+  changePage(evt: { length: number; pageIndex: number; pageSize: number; previousPageIndex?: number; }) {
+    this.loadData(evt.pageIndex);
+  }
 }
