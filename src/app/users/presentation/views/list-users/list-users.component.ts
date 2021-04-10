@@ -16,11 +16,30 @@ export class ListUsersComponent implements OnInit {
     { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
     { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
     { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
 
   ];
+  dataByPage: any = []
   constructor() { }
 
   ngOnInit(): void {
+    this.loadData();
   }
 
+
+  loadData(page: number = 0) {
+    this.dataByPage = this.data.slice(page * 10, page * 10 + 10);
+  }
+
+  changePage(evt: { length: number; pageIndex: number; pageSize: number; previousPageIndex?: number; }) {
+    this.loadData(evt.pageIndex);
+  }
 }
