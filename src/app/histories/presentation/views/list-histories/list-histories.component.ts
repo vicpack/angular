@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { MetaDataColumn } from '../../../../shared/services/meta-data-column';
 
 @Component({
@@ -32,6 +33,7 @@ export class ListHistoriesComponent implements OnInit {
   ];
 
   dataByPage: any = [];
+  pageSize: number = environment.pageSize;
   constructor() { }
 
   ngOnInit(): void {
@@ -39,8 +41,10 @@ export class ListHistoriesComponent implements OnInit {
   }
 
   loadData(page: number = 0) {
-    this.dataByPage = this.data.slice(page * 10, page * 10 + 10);
+    this.dataByPage = this.data.slice(page * this.pageSize, page * this.pageSize + this.pageSize);
   }
+
+
 
   userChangedPage(page: number) {
     this.loadData(page);//enviar el valor a una salida

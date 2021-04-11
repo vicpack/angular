@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  pageSize: 20,
+  pageSize: 10,
 };
 
 /*

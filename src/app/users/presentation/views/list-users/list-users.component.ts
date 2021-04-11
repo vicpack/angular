@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaDataColumn } from 'src/app/shared/services/meta-data-column';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'amb-list-users',
@@ -27,7 +28,8 @@ export class ListUsersComponent implements OnInit {
     { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
 
   ];
-  dataByPage: any = []
+  dataByPage: any = [];
+  pageSize: number = environment.pageSize;
   constructor() { }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class ListUsersComponent implements OnInit {
 
 
   loadData(page: number = 0) {
-    this.dataByPage = this.data.slice(page * 10, page * 10 + 10);
+    this.dataByPage = this.data.slice(page * this.pageSize, page * this.pageSize + this.pageSize);
   }
 
   userChangedPage(page: number) {
