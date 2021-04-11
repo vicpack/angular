@@ -9,9 +9,9 @@ import { MetaDataColumn } from '../../../../shared/services/meta-data-column';
 export class ListHistoriesComponent implements OnInit {
   //listFields: string[] = ['nhistoria', 'paciente', "medico"];
   metaDataColumns: MetaDataColumn[] = [
-    { field: "nHistoria", title: "Nro.Historia" },
-    { field: "paciente", title: "Nombre del paciente" },
-    { field: "medico", title: "Nombre del médico" },
+    { field: 'nHistoria', title: 'Nro.Historia' },
+    { field: 'paciente', title: 'Nombre del paciente' },
+    { field: 'medico', title: 'Nombre del médico' },
   ];
   data: any = [
     { nhistoria: "12345", paciente: "Leonel Messi", medico: "Dr House" },
@@ -42,7 +42,7 @@ export class ListHistoriesComponent implements OnInit {
     this.dataByPage = this.data.slice(page * 10, page * 10 + 10);
   }
 
-  changePage(evt: { length: number; pageIndex: number; pageSize: number; previousPageIndex?: number; }) {
-    this.loadData(evt.pageIndex);
+  userChangedPage(page: number) {
+    this.loadData(page);//enviar el valor a una salida
   }
 }

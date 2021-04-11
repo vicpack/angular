@@ -46,7 +46,7 @@ export class ListMedicsComponent implements OnInit {
     this.dataByPage = this.data.slice(page * 10, page * 10 + 10);
   }
 
-  changePage(evt: { length: number; pageIndex: number; pageSize: number; previousPageIndex?: number; }) {
-    this.loadData(evt.pageIndex);
+  userChangedPage(page: number) {
+    this.loadData(page);//enviar el valor a una salida
   }
 }
