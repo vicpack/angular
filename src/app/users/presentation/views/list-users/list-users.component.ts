@@ -26,10 +26,34 @@ export class ListUsersComponent implements OnInit {
     { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
     { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
     { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
+    { nombre: "Carlos", correo: "carlos@banorte.com", roles: "operador" },
 
   ];
   dataByPage: any = [];
-  pageSize: number = environment.pageSize;
+  pageSize: number = environment.pageSizeUser;
   constructor() { }
 
   ngOnInit(): void {

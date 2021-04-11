@@ -13,4 +13,5 @@
         </ng-container>
     </amb-table>
 </perfect-scrollbar>
-<amb-paginator (onDataChanged)="userChangedPage($event)" [totalRecords]="data.length"></amb-paginator>
+<amb-paginator (onDataChanged)="userChangedPage($event)" [totalRecords]="data.length" [pageSize]="pageSize">
+</amb-paginator>
