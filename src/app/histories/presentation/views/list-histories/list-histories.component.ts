@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { MetaDataColumn } from '../../../../shared/services/meta-data-column';
+import { PaginatorData } from '../../../../shared/classes/paginator-data';
 
 @Component({
   selector: 'amb-list-histories',
   templateUrl: './list-histories.component.html',
   styleUrls: ['./list-histories.component.css']
 })
-export class ListHistoriesComponent implements OnInit {
+export class ListHistoriesComponent extends PaginatorData implements OnInit {
   //listFields: string[] = ['nhistoria', 'paciente', "medico"];
   metaDataColumns: MetaDataColumn[] = [
     { field: 'nHistoria', title: 'Nro.Historia' },
@@ -32,21 +33,14 @@ export class ListHistoriesComponent implements OnInit {
     { nhistoria: "12345", paciente: "Jordan Love", medico: "Dr Sonrisas" },
   ];
 
-  dataByPage: any = [];
-  pageSize: number = environment.pageSize;
-  constructor() { }
+
+  constructor() {
+    super();
+  }
 
   ngOnInit(): void {
     this.loadData();
   }
 
-  loadData(page: number = 0) {
-    this.dataByPage = this.data.slice(page * this.pageSize, page * this.pageSize + this.pageSize);
-  }
 
-
-
-  userChangedPage(page: number) {
-    this.loadData(page);//enviar el valor a una salida
-  }
 }
