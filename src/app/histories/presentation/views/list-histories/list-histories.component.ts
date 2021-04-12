@@ -11,26 +11,28 @@ import { PaginatorData } from '../../../../shared/classes/paginator-data';
 export class ListHistoriesComponent extends PaginatorData implements OnInit {
   //listFields: string[] = ['nhistoria', 'paciente', "medico"];
   metaDataColumns: MetaDataColumn[] = [
-    { field: 'nHistoria', title: 'Nro.Historia' },
+    { field: 'id', title: 'ID' },
     { field: 'paciente', title: 'Nombre del paciente' },
     { field: 'medico', title: 'Nombre del médico' },
   ];
   data: any = [
-    { nhistoria: "12345", paciente: "Leonel Messi", medico: "Dr House" },
-    { nhistoria: "12345", paciente: "Cristiano Ronaldo", medico: "Dra Queen" },
-    { nhistoria: "12345", paciente: "Tony Stark", medico: "Dr Strange" },
-    { nhistoria: "12345", paciente: "Luisito Rey", medico: "Dr Simi" },
-    { nhistoria: "12345", paciente: "Jordan Love", medico: "Dr Sonrisas" },
-    { nhistoria: "12345", paciente: "Leonel Messi", medico: "Dr House" },
-    { nhistoria: "12345", paciente: "Cristiano Ronaldo", medico: "Dra Queen" },
-    { nhistoria: "12345", paciente: "Tony Stark", medico: "Dr Strange" },
-    { nhistoria: "12345", paciente: "Luisito Rey", medico: "Dr Simi" },
-    { nhistoria: "12345", paciente: "Jordan Love", medico: "Dr Sonrisas" },
-    { nhistoria: "12345", paciente: "Leonel Messi", medico: "Dr House" },
-    { nhistoria: "12345", paciente: "Cristiano Ronaldo", medico: "Dra Queen" },
-    { nhistoria: "12345", paciente: "Tony Stark", medico: "Dr Strange" },
-    { nhistoria: "12345", paciente: "Luisito Rey", medico: "Dr Simi" },
-    { nhistoria: "12345", paciente: "Jordan Love", medico: "Dr Sonrisas" },
+    { id: "1", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "2", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "3", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "4", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "5", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "6", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "7", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "8", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "9", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "10", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "11", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "12", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "13", paciente: "Leonel Messi", medico: "Dr House" },
+    { id: "14", paciente: "Leonel Messi", medico: "Dr House" },
+
+
+
   ];
 
 
@@ -38,6 +40,11 @@ export class ListHistoriesComponent extends PaginatorData implements OnInit {
     super();
   }
 
+  delete(record: any) {
+    const matchedRecord = this.data.findIndex((el: any) => el.id === record.id);
+    this.data.splice(matchedRecord, 1);
+    this.loadData();
+  }
   ngOnInit(): void {
     this.loadData();
   }
