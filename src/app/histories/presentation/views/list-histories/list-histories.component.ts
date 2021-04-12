@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { MetaDataColumn } from '../../../../shared/services/meta-data-column';
 import { PaginatorData } from '../../../../shared/classes/paginator-data';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmComponent } from 'src/app/shared/components/confirm/confirm.component';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'amb-list-histories',
@@ -36,14 +39,26 @@ export class ListHistoriesComponent extends PaginatorData implements OnInit {
   ];
 
 
-  constructor() {
+  constructor(private readonly utils: UtilsService) {
     super();
   }
 
+
+
   delete(record: any) {
-    const matchedRecord = this.data.findIndex((el: any) => el.id === record.id);
-    this.data.splice(matchedRecord, 1);
-    this.loadData();
+    const reference: any = this.utils.confirm("¿Realmente quiere eliminar?");
+
+
+    reference.afterClosed().subscribe((response: any) => {
+      if (!response) {
+        return;
+      }
+      const matchedRecord = this.data.findIndex((el: any) => el.id === record.id);
+      this.data.splice(matchedRecord, 1);
+      this.loadData();
+
+    });
+
   }
   ngOnInit(): void {
     this.loadData();
