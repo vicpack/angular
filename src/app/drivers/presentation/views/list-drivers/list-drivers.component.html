@@ -6,11 +6,11 @@
                 <button mat-button color="accent" matTooltip="EDITAR">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-button color="accent" matTooltip="ELIMINAR">
+                <button mat-button color="accent" matTooltip="ELIMINAR" (click)="delete(row)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </td>
         </ng-container>
     </amb-table>
 </perfect-scrollbar>
-<amb-paginator (onDataChanged)="userChangedPage($event)" [totalRecords]="data.length"></amb-paginator>
+<amb-paginator (onDataChanged)=" userChangedPage($event)" [totalRecords]="data.length"></amb-paginator>
