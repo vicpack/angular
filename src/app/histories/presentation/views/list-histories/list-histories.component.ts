@@ -5,6 +5,7 @@ import { PaginatorData } from '../../../../shared/classes/paginator-data';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmComponent } from 'src/app/shared/components/confirm/confirm.component';
 import { UtilsService } from 'src/app/shared/services/utils.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'amb-list-histories',
@@ -46,10 +47,10 @@ export class ListHistoriesComponent extends PaginatorData implements OnInit {
 
 
   delete(record: any) {
-    const reference: any = this.utils.confirm("¿Realmente quiere eliminar?");
+    const observableConfirm: Observable<string> = this.utils.confirm("¿Realmente quiere eliminar?");
 
 
-    reference.afterClosed().subscribe((response: any) => {
+    observableConfirm.subscribe((response: string) => {
       if (!response) {
         return;
       }

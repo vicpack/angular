@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { Paginator } from './shared/classes/paginator';
+import { SharedModule } from './shared/shared.module';
 //interfase para las rutas
 /**/
 //importacion de modulos 
@@ -30,6 +31,7 @@ import { Paginator } from './shared/classes/paginator';
     HttpClientModule,
     MatIconModule,
     FlexLayoutModule,
+    SharedModule,
   ],
   providers: [
     LogService,
