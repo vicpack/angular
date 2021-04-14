@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Paginator } from 'src/app/shared/classes/paginator';
+import { PaginatorComponent } from 'src/app/shared/components/paginator/paginator.component';
 import { MetaDataColumn } from 'src/app/shared/services/meta-data-column';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { environment } from 'src/environments/environment';
@@ -12,6 +13,7 @@ import { PaginatorData } from '../../../../shared/classes/paginator-data';
 })
 export class ListDriversComponent extends PaginatorData implements OnInit {
   //listFields: string[] = ['nombre', 'apellido', 'licencia'];
+  @ViewChild(PaginatorComponent) paginatorComponent: PaginatorComponent | undefined;
   metaDataColumns: MetaDataColumn[] = [
     { field: "id", title: "ID" },
     { field: "nombre", title: "Nombre Principal" },
@@ -56,6 +58,18 @@ export class ListDriversComponent extends PaginatorData implements OnInit {
       }
       const matchedRecord = this.data.findIndex((el: any) => el.id === record.id);
       this.data.splice(matchedRecord, 1);
+      const totalRecordsInCurrentPage = this.data.slice(this.currentPage * environment.pageSize, this.currentPage * environment.pageSize + environment.pageSize)
+
+      if (totalRecordsInCurrentPage > 0) {
+        (this.paginatorComponent as PaginatorComponent).goToPage(this.currentPage - 1);
+        this.loadData(this.currentPage);
+      } else if (this.currentPage > 0) {
+        (this.paginatorComponent as PaginatorComponent).goToPage(this.currentPage);
+        this.loadData(this.currentPage - 1);
+      } else {
+        (this.paginatorComponent as PaginatorComponent).goToPage(0);
+        this.loadData();
+      }
       this.loadData();
 
     });
