@@ -61,7 +61,7 @@ export class ListDriversComponent extends PaginatorData implements OnInit {
       const totalRecordsInCurrentPage = this.data.slice(this.currentPage * environment.pageSize, this.currentPage * environment.pageSize + environment.pageSize)
 
       if (totalRecordsInCurrentPage.length > 0) {
-        (this.paginatorComponent as PaginatorComponent).goToPage(this.currentPage);
+        //(this.paginatorComponent as PaginatorComponent).goToPage(this.currentPage);
         this.loadData(this.currentPage);
       } else if (this.currentPage > 0) {
         (this.paginatorComponent as PaginatorComponent).goToPage(this.currentPage - 1);

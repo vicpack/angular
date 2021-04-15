@@ -1,5 +1,6 @@
 mat-nav-list{
     width: 95%;
+    height: calc(100vh - 64px);
 }
 
 mat-list-item{
@@ -7,8 +8,8 @@ mat-list-item{
     border-radius: 0 24px 24px 0;
 }
 
-mat-list-item:hover{
-    background-color: white;
+mat-list-item.menu:hover{
+    background-color: white !important;
 }
 
 .activeLink{

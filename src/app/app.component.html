@@ -1,32 +1,15 @@
-<!-- <amb-item [username]="username" *ngFor="let username of listUsers"></amb-item>
-
-<div *ngFor="let user of listUsers">
-  {{ user }}
-</div>
- -->
 <mat-sidenav-container>
   <mat-sidenav opened="true" mode="side">
     <div class="logo" fxLayout fxLayoutGap="20px" fxLayoutAlign="start center">
       <mat-icon svgIcon="logo"></mat-icon>
-      <h3>Sistema de historias</h3>
+      <h3 *ngIf="expanded">Sistema de historias</h3>
     </div>
-    <amb-menu></amb-menu>
+    <amb-menu (onExpand)="showExpanded($event)"></amb-menu>
   </mat-sidenav>
   <mat-sidenav-content>
     <amb-header></amb-header>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<!-- <amb-page-login></amb-page-login>
-<amb-page-medic></amb-page-medic> selectores -->
-<!--
-<ul>
-  <li><a routerLink="/dashboard">Dashboard</a></li>
-  <li><a routerLink="/users">Users</a></li>
-  <li><a routerLink="/medics">Medics</a></li>
-  <li><a routerLink="/drivers">Drivers</a></li>
-  <li><a routerLink="/histories">Histories</a></li>
-</ul>
--->
+
 {{fecha}}
-<!--<router-outlet></router-outlet>  selector generico, pertenece a router module-->
