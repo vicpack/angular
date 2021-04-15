@@ -9,7 +9,7 @@ mat-list-item{
 }
 
 mat-list-item.menu:hover{
-    background-color: white !important;
+    background-color: #682B40 !important;
 }
 
 .activeLink{
