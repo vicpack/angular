@@ -75,6 +75,11 @@ export class ListDriversComponent extends PaginatorData implements OnInit {
   }
 
   edit(record: any) {
-    this.utils.openModal(FormDriverComponent, {});
+    const options = {
+      disabledClose: true,
+      panelClass: "container-modal",
+      data: record
+    }
+    this.utils.openModal(FormDriverComponent, options);
   }
 }
