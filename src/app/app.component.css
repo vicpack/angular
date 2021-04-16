@@ -3,16 +3,16 @@ mat-sidenav-container,mat-sidenav-content,mat-sidenav{
 }
 
 mat-sidenav{
-    width: 280px;
+    max-width: 280px;
     background-color: #E91E63;
     box-shadow: 0 50px 50px -10px rgba(0,0,0,.5);
 }
 
-.log{
+.logo{
     padding: 0 24px;
     background-color: rgb(30,33,41);
     color: hsla(0,0%,100%,0.7)!important;
-    
+    min-height: 64px;
 }
 
 .logo h3{
