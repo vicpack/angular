@@ -3,7 +3,7 @@
         <mat-list-item *ngFor="let menu of listMenu" routerLinkActive="activeLink" class="menu">
             <a [routerLink]="menu.url">
                 <button mat-icon-button>
-                    <mat-icon [svgIcon]="menu.icon"></mat-icon>
+                    <mat-icon [svgIcon]="menu.icon" matTooltip="{{menu.title.toUpperCase()}}"></mat-icon>
                 </button>
                 <span *ngIf="expanded">
                     {{menu.title}}
