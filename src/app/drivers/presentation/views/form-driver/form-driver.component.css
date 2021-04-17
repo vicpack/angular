@@ -1,0 +1,9 @@
+.container-modal{
+    width:600px;
+}
+
+@media(max-width:500px){
+    .container-modal{
+        width: 300px;
+    }
+}
