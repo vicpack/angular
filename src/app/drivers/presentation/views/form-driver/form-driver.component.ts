@@ -24,4 +24,8 @@ export class FormDriverComponent implements OnInit {
     this.title = this.data ? "Edición" : "Nuevo";
   }
 
+  save() {
+    console.log(this.fg);
+  }
+
 }
