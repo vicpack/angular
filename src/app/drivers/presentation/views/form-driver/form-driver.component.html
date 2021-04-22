@@ -19,10 +19,15 @@
             <mat-label>Licencia</mat-label>
             <input type="text" matInput formControlName="licencia" required>
         </mat-form-field>
-        <div fxLayout fxLayoutAlign="end center" fxLayoutGap="20px">
-            <button mat-raised-button color="primary" type="button" [disabled]="fg.invalid"
-                (click)="save()">Guardar</button>
-            <button mat-button mat-dialog-close color="accent" type="button">Cancelar</button>
+        <div fxLayout fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <div>
+                <span class="error" *ngIf="fg.invalid">Campos inválidos</span>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" type="button" [disabled]="fg.invalid"
+                    (click)="save()">Guardar</button>
+                <button mat-button mat-dialog-close color="accent" type="button">Cancelar</button>
+            </div>
         </div>
     </form>
 </mat-dialog-content>

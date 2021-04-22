@@ -25,3 +25,9 @@
         width: 300px;
     }
 }
+
+.error{
+    font-size: 12px;
+    font-style: italic;
+    color:red;
+}

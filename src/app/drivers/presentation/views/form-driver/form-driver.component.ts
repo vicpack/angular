@@ -25,7 +25,12 @@ export class FormDriverComponent implements OnInit {
   }
 
   save() {
-    console.log(this.fg);
+    if (this.fg.valid) {
+      console.log("Grabar en la BD");
+    } else {
+      console.log("campos inválidos");
+    }
+
   }
 
 }
