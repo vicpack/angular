@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'amb-form-driver',
@@ -12,8 +12,9 @@ export class FormDriverComponent implements OnInit {
   title: string = "";
   fg: FormGroup;
 
-  constructor(@Inject(MAT_DIALOG_DATA) private data: any) {
+  constructor(@Inject(MAT_DIALOG_DATA) private data: any, private reference: MatDialogRef<FormDriverComponent>) {
     this.fg = new FormGroup({
+      id: new FormControl(this.data?.id),
       nombre: new FormControl(this.data?.nombre, Validators.required),
       apellido: new FormControl(this.data?.apellido, Validators.required),
       licencia: new FormControl(this.data?.licencia, [Validators.required, Validators.pattern(/^[a-z]{3}-[0-9]{3}$/g)]),
@@ -26,9 +27,7 @@ export class FormDriverComponent implements OnInit {
 
   save() {
     if (this.fg.valid) {
-      console.log("Grabar en la BD");
-    } else {
-      console.log("campos inválidos");
+      this.reference.close(this.fg.value);
     }
 
   }

@@ -20,12 +20,13 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { KeypadComponent } from './components/keypad/keypad.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
 };
 @NgModule({
-  declarations: [TitleComponent, ContainerComponent, TableComponent, PaginatorComponent, ConfirmComponent],
+  declarations: [TitleComponent, ContainerComponent, TableComponent, PaginatorComponent, ConfirmComponent, KeypadComponent],
   imports: [
     CommonModule, MatToolbarModule, MatIconModule, FlexLayoutModule,
     MatCardModule, MatTableModule, MatPaginatorModule, PerfectScrollbarModule, MatButtonModule, MatDialogModule,

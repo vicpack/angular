@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { Paginator } from 'src/app/shared/classes/paginator';
 import { PaginatorComponent } from 'src/app/shared/components/paginator/paginator.component';
@@ -49,7 +50,8 @@ export class ListDriversComponent extends PaginatorData implements OnInit {
     this.loadData();
   }
 
-  delete(record: any) {
+  delete(evt: any, record: any) {
+    evt.stopPropagation();
     const observableConfirm: Observable<string> = this.utils.confirm(`¿Realmente quiere eliminar "${record.nombre} ${record.apellido}"?`);
 
 
@@ -74,12 +76,24 @@ export class ListDriversComponent extends PaginatorData implements OnInit {
 
   }
 
-  edit(record: any) {
+  openForm(evt: any, record: any = null) {
+    evt.stopPropagation();
     const options = {
       disabledClose: true,
       panelClass: "container-modal",
       data: record
-    }
-    this.utils.openModal(FormDriverComponent, options);
+    };
+    const reference: MatDialogRef<FormDriverComponent> = this.utils.openModal(FormDriverComponent, options);
+
+    reference.afterClosed().subscribe((response) => {
+      if (!response) {
+        return;
+      }
+      if (response.id) {
+        console.log('edicion', response);
+      } else {
+        console.log('insercion', response);
+      }
+    });
   }
 }
