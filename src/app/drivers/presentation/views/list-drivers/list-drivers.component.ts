@@ -53,6 +53,7 @@ export class ListDriversComponent extends PaginatorData implements OnInit {
 
   listKeyPadButtons: KeyPadButton[] = [
     { icon: 'add', color: 'primary', action: 'NEW', tooltip: 'AGREGAR PILOTO' },
+    { icon: 'cloud_download', color: 'accent', action: 'EXPORT', tooltip: 'EXPORTAR DATA' },
   ];
   delete(evt: any, record: any) {
     evt.stopPropagation();
@@ -81,7 +82,7 @@ export class ListDriversComponent extends PaginatorData implements OnInit {
   }
 
   openForm(evt: any, record: any = null) {
-    evt.stopPropagation();
+    evt?.stopPropagation();
     const options = {
       disabledClose: true,
       panelClass: "container-modal",
