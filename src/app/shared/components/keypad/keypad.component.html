@@ -1,1 +1,6 @@
-<p>keypad works!</p>
+<div fxLayout="column" fxLayoutGap="10px">
+    <button mat-fab *ngFor="let button of keypadButtons" [color]="button.color" [matTooltip]="button.tooltip"
+        (click)="actions(button.action)">
+        <mat-icon>{{button.icon}}</mat-icon>
+    </button>
+</div>

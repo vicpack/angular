@@ -29,11 +29,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   declarations: [TitleComponent, ContainerComponent, TableComponent, PaginatorComponent, ConfirmComponent, KeypadComponent],
   imports: [
     CommonModule, MatToolbarModule, MatIconModule, FlexLayoutModule,
-    MatCardModule, MatTableModule, MatPaginatorModule, PerfectScrollbarModule, MatButtonModule, MatDialogModule,
+    MatCardModule, MatTableModule, MatPaginatorModule, PerfectScrollbarModule, MatButtonModule, MatDialogModule, MatTooltipModule
   ],
   exports: [TitleComponent, ContainerComponent, TableComponent, MatTableModule, MatButtonModule, MatIconModule, MatTooltipModule,
     PerfectScrollbarModule, MatPaginatorModule, PaginatorComponent, MatDialogModule, ConfirmComponent, MatToolbarModule, FlexLayoutModule,
-    ReactiveFormsModule, MatFormFieldModule, MatInputModule,],
+    ReactiveFormsModule, MatFormFieldModule, MatInputModule, KeypadComponent, MatTooltipModule],
   providers: [{
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,

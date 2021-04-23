@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { KeyPadButton } from '../interfaces/keybutton.interface';
 
 @Component({
@@ -8,10 +8,14 @@ import { KeyPadButton } from '../interfaces/keybutton.interface';
 })
 export class KeypadComponent implements OnInit {
   @Input() keypadButtons: KeyPadButton[] = [];
+  @Output() clickButton: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  actions(act: string) { }
+  actions(act: string) {
+    this.clickButton.emit(act);
+  }
 }

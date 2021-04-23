@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { Paginator } from 'src/app/shared/classes/paginator';
+import { KeyPadButton } from 'src/app/shared/components/interfaces/keybutton.interface';
 import { PaginatorComponent } from 'src/app/shared/components/paginator/paginator.component';
 import { MetaDataColumn } from 'src/app/shared/services/meta-data-column';
 import { UtilsService } from 'src/app/shared/services/utils.service';
@@ -50,6 +51,9 @@ export class ListDriversComponent extends PaginatorData implements OnInit {
     this.loadData();
   }
 
+  listKeyPadButtons: KeyPadButton[] = [
+    { icon: 'add', color: 'primary', action: 'NEW', tooltip: 'AGREGAR PILOTO' },
+  ];
   delete(evt: any, record: any) {
     evt.stopPropagation();
     const observableConfirm: Observable<string> = this.utils.confirm(`¿Realmente quiere eliminar "${record.nombre} ${record.apellido}"?`);
